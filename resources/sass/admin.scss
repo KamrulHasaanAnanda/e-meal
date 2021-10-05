@@ -1,0 +1,27 @@
+.admin {
+    height: 14rem;
+
+    .colums {
+        height: 50%;
+        margin: 2.5rem auto;
+        background: #9bd8de;
+        border-radius: 1rem;
+        padding: 3px;
+
+        h3 {
+            padding: 11px;
+            margin: 1.6rem 1rem;
+            font-size: 19px;
+            font-weight: bolder;
+            border-radius: 10px;
+            color: #cd3636;
+            background: snow;
+            text-align: center;
+
+            &:hover {
+                color: #212529;
+                background: #f28222;
+            }
+        }
+    }
+}
