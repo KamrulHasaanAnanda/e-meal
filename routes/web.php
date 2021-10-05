@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 Auth::routes();
+// App\Http\Controllers\Auth\LoginController@showLoginForm
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
