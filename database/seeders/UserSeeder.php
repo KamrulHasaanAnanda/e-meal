@@ -2,7 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
+// use Spatie\Permission\Contracts\Role;
+use Spatie\Permission\Models\Role;
+
 
 class UserSeeder extends Seeder
 {
@@ -24,16 +28,16 @@ class UserSeeder extends Seeder
             // ['name' => 'Placement Admin', 'name_short' => 'pladmin', 'brand_user' => false],
             // ['name' => 'Production Manager', 'name_short' => 'pmanager', 'brand_user' => false],
             // ['name' => 'Jeep Brand Manager', 'name_short' => 'jeep_bmanager', 'brand_user' => 8, 'role' => "bmanager"],
-            ['name' => 'Admin', 'name_short' => 'admin', 'role' => "admin"],
+            ['name' => 'Admin', 'name_short' => 'admin'],
 
         ];
         foreach ($allseeds as $seed) {
             if (!empty($seed['role'])) $role = Role::where('name', $seed['role'])->first();
             else $role = Role::create(['name' => $seed['name_short']]);
             $user = new User();
-            $user->email = $seed['name_short'] . '@wigwag.tv';
+            $user->email = $seed['name_short'] . '@e-meal.com';
             $user->name = $seed['name'];
-            $user->password = bcrypt('NPass123456$');
+            $user->password = bcrypt('12345678');
             $user->save();
             $user->assignRole($role);
         }
