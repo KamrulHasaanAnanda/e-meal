@@ -31,7 +31,7 @@
                     @auth
                        <a href="{{ url('/home') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Home</a>
                     @else
-                      <a href="{{ route('login') }}"class="btn btn-success btn-lg active" role="button" aria-pressed="true">Log in</a></button>
+                      {{-- <a href="{{ route('login') }}"class="btn btn-success btn-lg active" role="button" aria-pressed="true">Log in</a></button> --}}
 
                         @if (Route::has('register'))
                         <a href="{{ route('register') }}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Register</a>
