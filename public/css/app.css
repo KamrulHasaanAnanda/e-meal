@@ -10182,7 +10182,7 @@ body {
 }
 
 .forms input {
-  height: 4rem;
+  height: 3rem;
 }
 .forms input::-moz-placeholder {
   font-size: 1rem;
