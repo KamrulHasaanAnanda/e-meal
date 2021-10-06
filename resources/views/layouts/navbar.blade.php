@@ -66,6 +66,7 @@
   
   
   <footer class="footer">
+      
   <div class="footer-basic">
         <footer>
             <div class="social"><a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-snapchat"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-facebook"></i></a></div>
