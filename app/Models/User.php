@@ -43,6 +43,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function saveData($input, $model_id = null)
+    {
+        // dd($model_id);
+        if (empty($model_id)) {
+            $model = $this->create($input);
+            $model = $model->fresh();
+        } else {
+            // dd($input);
+            $model = $this->updateOrCreate(['id' => $model_id], $input);
+            $model->save();
+        }
+        return $model;
+    }
+
     public function userList(){
         return $this->hasOne(UserInfo::class);
     }
