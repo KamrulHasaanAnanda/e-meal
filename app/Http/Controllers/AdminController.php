@@ -9,8 +9,8 @@ class AdminController extends Controller
 {
     public function userList()
     {
-        $userList = (new User())->with('userList')->get();
-        // dd($userList);
+        $userList = (new User())->with('userList','role')->get();
+        dd($userList);
         return view('admin.userlist',compact('userList'));
     }
     public function add_user(){
