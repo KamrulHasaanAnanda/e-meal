@@ -16,4 +16,10 @@ class AdminController extends Controller
     public function add_user(){
         return view('admin.addUser');
     }
+    public function store_user(Request $req){
+        $input = $req->all();
+        dd($input);
+        
+
+    }
 }
