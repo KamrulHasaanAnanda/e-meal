@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\UserInfo;
 use Illuminate\Database\Seeder;
 // use Spatie\Permission\Contracts\Role;
 use Spatie\Permission\Models\Role;
@@ -40,6 +41,17 @@ class UserSeeder extends Seeder
             $user->password = bcrypt('12345678');
             $user->save();
             $user->assignRole($role);
+            // dd($user->id);
+            $userInfo = new UserInfo();
+            // $infodata = [
+            //     'user_id' => $user->id,
+            // ];
+            // dd($infodata);
+            $userInfo->user_id = $user->id;
+            $userInfo->mobile = "01300021529";
+
+            $userInfo->save();
+
         }
     }
 }

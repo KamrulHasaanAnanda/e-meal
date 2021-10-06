@@ -23,7 +23,7 @@
                             <div class="colums">
                                 
                                 <h3 class="c-point">
-                                    <a href="">
+                                    <a href={{route('admin.userList')}}>
                                         UserList
                                     </a>
                                     </h3>
