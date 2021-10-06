@@ -27,10 +27,10 @@ class HomeController extends Controller
     {
         $user_id = Auth::id();
         // dd($user_id);
-        $user = User::where('id',$user_id)->with('roles')->get();
+        $user = User::where('id',$user_id)->with('userList')->get();
         $total_user = count(User::get()) - 1;
-        // dd($user[0]->roles[0]->name);
-        if($user[0]->roles[0]->name == "admin"){
+        // dd($user[0]->userList->type);
+        if($user[0]->userList->type == "admin"){
 
             return view('admin.index',compact('total_user'));
         }

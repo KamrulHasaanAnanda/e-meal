@@ -18,6 +18,8 @@ class CreateUserInfosTable extends Migration
             $table->integer('user_id');
             $table->string('user_img')->nullable();
             $table->string('mobile')->nullable();
+            $table->string('type');
+
             $table->timestamps();
         });
     }

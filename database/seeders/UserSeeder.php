@@ -33,14 +33,12 @@ class UserSeeder extends Seeder
 
         ];
         foreach ($allseeds as $seed) {
-            if (!empty($seed['role'])) $role = Role::where('name', $seed['role'])->first();
-            else $role = Role::create(['name' => $seed['name_short']]);
+
             $user = new User();
             $user->email = $seed['name_short'] . '@e-meal.com';
             $user->name = $seed['name'];
             $user->password = bcrypt('12345678');
             $user->save();
-            $user->assignRole($role);
             // dd($user->id);
             $userInfo = new UserInfo();
             // $infodata = [
@@ -49,6 +47,7 @@ class UserSeeder extends Seeder
             // dd($infodata);
             $userInfo->user_id = $user->id;
             $userInfo->mobile = "01300021529";
+            $userInfo->type = "admin";
 
             $userInfo->save();
 
