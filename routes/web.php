@@ -27,6 +27,13 @@ Route::get('/admin/add', [App\Http\Controllers\AdminController::class, 'add_user
 Route::get('/admin/userList', [App\Http\Controllers\AdminController::class, 'userList'])->name('admin.userList');
 
 Route::post('/admin/store', [App\Http\Controllers\AdminController::class, 'store_user'])->name('admin.store_user');
+Route::post('/admin/store', [App\Http\Controllers\AdminController::class, 'store_user'])->name('admin.store_user');
+Route::get('/admin/edit/{id}', [App\Http\Controllers\AdminController::class, 'edit'])->name('admin.user_edit');
+Route::post('/admin/update/{id}', [App\Http\Controllers\AdminController::class, 'update'])->name('admin.update_user');
+Route::get('/admin/delete/{id}', [App\Http\Controllers\AdminController::class, 'deleteUser'])->name('admin.user_delete');
+
+
+
 
 
 

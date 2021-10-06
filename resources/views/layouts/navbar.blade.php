@@ -21,7 +21,23 @@
             <></>
             @else
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+           {{-- {{$user_img}} --}}
+           @if (!empty(Session::get('user_img')))
+          
+               <img class="nav-image" src= @php
+                 echo(Session::get('user_img'));
+                @endphp alt="" srcset="">
+           @else
+           <a class="navbar-brand navbar-a user-name" href="{{ url('/') }}">
+            {{-- {{ config('app.name', 'Laravel') }} --}}
+            @php
+                echo(implode(Session::get('user_name')));
+            @endphp
+            {{-- {{Session::get('user_name')}} --}}
+            </a>
+           @endif
+               {{-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> --}}
+
         </li>
       
         @endif

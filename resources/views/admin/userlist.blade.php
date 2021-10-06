@@ -2,7 +2,12 @@
 
 @section('content')
 <div class="admin-table">
-    
+    <nav class="navbar navbar-light bg-light">
+      <form class="form-inline search-form">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0 height-3" type="submit">Search</button>
+      </form>
+    </nav>
     <table class="table table-hover">
         <thead>
           <tr>
@@ -21,17 +26,26 @@
               <td>{{$user->name}}</td>
               <td>{{$user->userList->mobile}}</td>
               <td>
-                <select class="custom-select">
-                  <option value="1">Manager</option>
-                  <option value="2">User</option>
+                <select class="custom-select" name="type">
+                  @if ($user->userList->type == "user")
+                  <option value="user" selected>User</option>
+                  <option value="manager">Manager</option>
+                  @elseif($user->userList->type == "manager")
+                  <option value="manager" selected>Manager</option>
+                  <option value="user">User</option>
+                  @else
+                  <option value="1" selected>Not selected</option>
+                  <option value="manager">Manager</option>
+                  <option value="user">User</option>
+                  @endif
                 </select>
               </td>
               <td>
                 {{$user->userList->type}}
               </td>
               <td>
-                <button type="button" class="btn btn-secondary">Secondary</button>
-                <button type="button" class="btn btn-danger">Danger</button>
+                <a href={{route('admin.user_edit',[$user->id])}} class="btn btn-secondary">Edit</a>
+                <a href={{route('admin.user_delete',[$user->id])}} onClick="return confirm('Are you want to delete?')" class="btn btn-danger">Delete</a>
               </td>
             </tr>
             @endforeach
