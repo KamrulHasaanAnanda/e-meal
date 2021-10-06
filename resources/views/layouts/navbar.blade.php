@@ -23,66 +23,7 @@
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Item 1</a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link nav-link-collapse"
-            href="#"
-            id="hasSubItems"
-            data-toggle="collapse"
-            data-target="#collapseSubItems2"
-            aria-controls="collapseSubItems2"
-            aria-expanded="false"
-          >Item 2</a>
-          <ul class="nav-second-level collapse" id="collapseSubItems2" data-parent="#navAccordion">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span class="nav-link-text">Item 2.1</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span class="nav-link-text">Item 2.2</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Item 3</a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link nav-link-collapse"
-            href="#"
-            id="hasSubItems"
-            data-toggle="collapse"
-            data-target="#collapseSubItems4"
-            aria-controls="collapseSubItems4"
-            aria-expanded="false"
-          >Item 4</a>
-          <ul class="nav-second-level collapse" id="collapseSubItems4" data-parent="#navAccordion">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span class="nav-link-text">Item 4.1</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span class="nav-link-text">Item 4.2</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span class="nav-link-text">Item 4.2</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Item 5</a>
-        </li>
+      
         @endif
       </ul>
 
