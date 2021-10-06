@@ -29,11 +29,11 @@
 
       <ul class="form-inline ml-auto mt-2 mt-md-0" style="margin-bottom:0px">
         @guest
-                    {{-- @if (Route::has('login'))
+                    @if (Route::has('login'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
-                    @endif --}}
+                    @endif
 
                     @if (Route::has('register'))
                         <li class="nav-item">
@@ -80,5 +80,4 @@
             <p class="copyright">TeamHashtag©2021</p>
         </footer>
     </div>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   </footer>
+  </footer>

@@ -7,11 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable,HasRoles;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -42,6 +41,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function saveData($input, $model_id = null)
+    {
+        // dd($model_id);
+        if (empty($model_id)) {
+            $model = $this->create($input);
+            $model = $model->fresh();
+        } else {
+            // dd($input);
+            $model = $this->updateOrCreate(['id' => $model_id], $input);
+            $model->save();
+        }
+        // dd($model);
+        return $model;
+    }
 
     public function userList(){
         return $this->hasOne(UserInfo::class);

@@ -15,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-            @foreach ($userList as $user)
+            @foreach ($users as $user)
                 
             <tr>
               <td>{{$user->name}}</td>
@@ -27,7 +27,7 @@
                 </select>
               </td>
               <td>
-                
+                {{$user->userList->type}}
               </td>
               <td>
                 <button type="button" class="btn btn-secondary">Secondary</button>
