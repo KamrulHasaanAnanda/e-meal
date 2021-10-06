@@ -15,9 +15,11 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-  
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto sidenav bg-black" id="navAccordion">
+        <ul class="navbar-nav mr-auto sidenav bg-black" id="navAccordion">
+            @if (Auth::guest())
+            <></>
+            @else
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
@@ -81,7 +83,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Item 5</a>
         </li>
+        @endif
       </ul>
+
       <ul class="form-inline ml-auto mt-2 mt-md-0" style="margin-bottom:0px">
         @guest
                     @if (Route::has('login'))

@@ -22,4 +22,7 @@ Auth::routes();
 // App\Http\Controllers\Auth\LoginController@showLoginForm
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//admin
+Route::get('/admin/add', [App\Http\Controllers\AdminController::class, 'add_user'])->name('admin.add_user');
+
 

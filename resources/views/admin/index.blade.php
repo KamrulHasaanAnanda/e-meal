@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header header-dash">Total User :</div>
+                <div class="card-header header-dash">Total User: <span style="color: red">{{$total_user}}</span></div>
 
                 <div class="card-body">
                     <div class="admin row">
@@ -13,14 +13,20 @@
                         <div class="col-md-6">
                            <div class="colums">
                               <h3 class="c-point">
-                                Add new User   
+                                <a href={{ route('admin.add_user') }}>
+                                    Add new User 
+                                </a>   
                               </h3> 
                            </div>
                         </div>
                         <div class="col-md-6">
                             <div class="colums">
                                 
-                                <h3 class="c-point"> UserList</h3>
+                                <h3 class="c-point">
+                                    <a href="">
+                                        UserList
+                                    </a>
+                                    </h3>
                             </div>
                         </div>
 
