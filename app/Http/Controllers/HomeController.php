@@ -43,6 +43,9 @@ class HomeController extends Controller
         if($user[0]->userList->type == "admin"){
 
             return view('admin.index',compact('user_img','user_name','total_user'));
+        } else if($user[0]->userList->type == "manager"){
+
+            return view('manager.index',compact('user_img','user_name','total_user'));
         }
         
     }
