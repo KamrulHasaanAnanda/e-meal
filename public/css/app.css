@@ -10296,6 +10296,45 @@ body {
   text-decoration: none;
 }
 
+.meal-system .meal-head {
+  display: inline-flex;
+}
+.meal-system .meal-head .start {
+  background: indianred;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+}
+.meal-system .meal-table {
+  background: #a1b7a1;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: darkred;
+  overflow-y: scroll;
+  position: relative;
+  height: 23rem;
+}
+.meal-system .meal-table .meal-table-h3 {
+  font-size: 22px;
+  color: darkred;
+  font-weight: bold;
+}
+.meal-system .meal-table input {
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid deepskyblue;
+}
+.meal-system .meal-table select {
+  border: none;
+  width: 11.5rem;
+  height: 3rem;
+  border-radius: 11px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ff2700;
+}
 .meal-system .meals-add {
   border-radius: 10px;
   padding: 1rem;

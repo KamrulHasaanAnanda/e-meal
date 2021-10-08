@@ -32,6 +32,12 @@ Route::get('/admin/delete/{id}', [App\Http\Controllers\AdminController::class, '
 
 //manager
 Route::get('/manager/meal-system', [App\Http\Controllers\ManagerController::class, 'meal_system'])->name('manager.mealSystem');
+Route::post('/manager/store_meal_system', [App\Http\Controllers\ManagerController::class, 'store_meal_system'])->name('manager.store_meal_system');
+Route::post('/manager/meal/assign/{id}', [App\Http\Controllers\ManagerController::class, 'meal_assign'])->name('manager.meal_assign');
+
+
+
+Route::get('/manager/meal/stop/{id}', [App\Http\Controllers\ManagerController::class, 'delete_meal_system'])->name('manager.meal_stop');
 
 //meals
 Route::get('/manager/meals', [App\Http\Controllers\MealsController::class, 'index'])->name('manager.meal');

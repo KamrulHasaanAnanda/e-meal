@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMealModelsTable extends Migration
+class CreateMealDatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateMealModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('meal_models', function (Blueprint $table) {
+        Schema::create('meal_dates', function (Blueprint $table) {
             $table->id();
-            $table->date('start');
-            $table->date('end');
-         
+            $table->date('date');
+            $table->integer('meal_id')->nullable();
+            $table->integer('user_id')->nullable();
+            $table->integer('meal_model_id')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateMealModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meal_models');
+        Schema::dropIfExists('meal_dates');
     }
 }

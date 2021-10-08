@@ -33,6 +33,46 @@
     }
 }
 .meal-system {
+    .meal-head {
+        display: inline-flex;
+        .start {
+            background: indianred;
+            border-radius: 10px;
+            padding: 10px;
+            color: white;
+        }
+    }
+    .meal-table {
+        background: #a1b7a1;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: darkred;
+        overflow-y: scroll;
+        position: relative;
+        height: 23rem;
+
+        .meal-table-h3 {
+            font-size: 22px;
+            color: darkred;
+            font-weight: bold;
+        }
+        input {
+            height: 3rem;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            border: 1px solid deepskyblue;
+        }
+        select {
+            border: none;
+            width: 11.5rem;
+            height: 3rem;
+            border-radius: 11px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ff2700;
+        }
+    }
     .meals-add {
         border-radius: 10px;
         padding: 1rem;
