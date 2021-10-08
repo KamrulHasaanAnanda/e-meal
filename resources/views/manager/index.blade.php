@@ -14,13 +14,10 @@
                            <div class="colums">
                               <h3 class="c-point">
                                 <div class="dropdown">
-                                    <a class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Meal System
+                                    <a href={{route('manager.mealSystem')}}>
+                                        System
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                      <a class="dropdown-item" href="#">Weekly System</a>
-                                      <a class="dropdown-item" href="#">Monthly System</a>
-                                    </div>
+                                 
                                   </div>
                               </h3> 
                            </div>

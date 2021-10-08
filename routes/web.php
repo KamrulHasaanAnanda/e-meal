@@ -25,12 +25,26 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //admin
 Route::get('/admin/add', [App\Http\Controllers\AdminController::class, 'add_user'])->name('admin.add_user');
 Route::get('/admin/userList', [App\Http\Controllers\AdminController::class, 'userList'])->name('admin.userList');
-
-Route::post('/admin/store', [App\Http\Controllers\AdminController::class, 'store_user'])->name('admin.store_user');
 Route::post('/admin/store', [App\Http\Controllers\AdminController::class, 'store_user'])->name('admin.store_user');
 Route::get('/admin/edit/{id}', [App\Http\Controllers\AdminController::class, 'edit'])->name('admin.user_edit');
 Route::post('/admin/update/{id}', [App\Http\Controllers\AdminController::class, 'update'])->name('admin.update_user');
 Route::get('/admin/delete/{id}', [App\Http\Controllers\AdminController::class, 'deleteUser'])->name('admin.user_delete');
+
+//manager
+Route::get('/manager/meal-system', [App\Http\Controllers\ManagerController::class, 'meal_system'])->name('manager.mealSystem');
+
+//meals
+Route::get('/manager/meals', [App\Http\Controllers\MealsController::class, 'index'])->name('manager.meal');
+Route::get('/manager/meals/add', [App\Http\Controllers\MealsController::class, 'add_meal'])->name('manager.meal_add');
+Route::post('/manager/meal/store', [App\Http\Controllers\MealsController::class, 'store_meal'])->name('manager.store_meal');
+Route::get('/manager/meal/edit/{id}', [App\Http\Controllers\MealsController::class, 'edit'])->name('manager.meal_edit');
+Route::post('/manager/meal/update/{id}', [App\Http\Controllers\MealsController::class, 'update'])->name('manager.update_meal');
+Route::get('/manager/meal/delete/{id}', [App\Http\Controllers\MealsController::class, 'deleteMeal'])->name('manager.meal_delete');
+
+
+
+
+
 
 
 

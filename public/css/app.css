@@ -10278,6 +10278,11 @@ body {
   padding: 31px;
   border-radius: 4%;
 }
+.manager .colums .dropdown-a a {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #c5084e;
+}
 .manager .colums h3 {
   padding: 11px;
   margin: 0.6rem 1rem;
@@ -10289,4 +10294,27 @@ body {
 .manager .colums h3 a:hover {
   color: #212529;
   text-decoration: none;
+}
+
+.meal-system .meals-add {
+  border-radius: 10px;
+  padding: 1rem;
+  background: aliceblue;
+  color: turquoise;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.meal-system .meals-add:hover {
+  text-decoration: none;
+  background: #fc3714;
+  color: white;
+}
+.meal-system .forms input {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: red;
+  text-align: center;
 }

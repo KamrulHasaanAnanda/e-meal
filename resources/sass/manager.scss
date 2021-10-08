@@ -8,6 +8,13 @@
         /* border-radius: 1rem; */
         padding: 31px;
         border-radius: 4%;
+        .dropdown-a {
+            a {
+                font-size: 1rem;
+                font-weight: bold;
+                color: #c5084e;
+            }
+        }
 
         h3 {
             padding: 11px;
@@ -22,6 +29,32 @@
                     text-decoration: none;
                 }
             }
+        }
+    }
+}
+.meal-system {
+    .meals-add {
+        border-radius: 10px;
+        padding: 1rem;
+        background: aliceblue;
+        color: turquoise;
+        font-weight: bold;
+        font-size: 1rem;
+        &:hover {
+            text-decoration: none;
+            background: #fc3714;
+            color: white;
+        }
+    }
+    .forms {
+        input {
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: red;
+            text-align: center;
         }
     }
 }
