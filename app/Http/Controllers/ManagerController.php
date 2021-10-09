@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cost;
 use App\Models\MealAdd;
 use App\Models\MealDate;
 use App\Models\MealModel;
@@ -36,6 +37,7 @@ class ManagerController extends Controller
                 $input['date'] = $date;
                 $input['meal_model_id'] = $meal_schedule[0]->id;
                 $add_dates = (new MealDate())->saveData($input);
+                $add_cost = (new Cost())->saveData($input);
             }
             $show_dates = MealDate::with(['user','meal'])->where('meal_model_id', $meal_schedule[0]->id)->get();
             // dd($show_dates);
@@ -78,6 +80,7 @@ class ManagerController extends Controller
     {
         $input = $req->all();
         $meal_add = (new MealDate())->saveData($input,$id);
+        $add_cost = (new Cost())->saveData($input,$id);
         return back()->with("success","User has been Assigned");
 
         // dd($input);

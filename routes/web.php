@@ -50,6 +50,13 @@ Route::get('/message/send/{id}', [App\Http\Controllers\MessageController::class,
 Route::post('/manager/meal/store/', [App\Http\Controllers\MessageController::class, 'store_message'])->name('message.store_message');
 
 
+//cost
+Route::get('/cost', [App\Http\Controllers\CostController::class, 'index'])->name('cost.index');
+
+//income
+Route::get('/income/add', [App\Http\Controllers\IncomeController::class, 'income'])->name('income.add');
+
+
 
 
 

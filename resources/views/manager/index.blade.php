@@ -26,7 +26,7 @@
                             <div class="colums">
                                 
                                 <h3 class="c-point">
-                                    <a href={{route('admin.userList')}}>
+                                    <a href={{route('cost.index')}}>
                                        Costing
                                     </a>
                                     </h3>
