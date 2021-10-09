@@ -47,7 +47,7 @@ Route::get('/manager/meal/delete/{id}', [App\Http\Controllers\MealsController::c
 
 //message
 Route::get('/message/send/{id}', [App\Http\Controllers\MessageController::class, 'message_view'])->name('message.message_view');
-Route::post('/manager/meal/update/{id}', [App\Http\Controllers\MealsController::class, 'update'])->name('manager.update_meal');
+Route::post('/manager/meal/store/', [App\Http\Controllers\MessageController::class, 'store_message'])->name('message.store_message');
 
 
 
