@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MealDate;
 use App\Models\User;
 // use Illuminate\Contracts\Session\Session;
 use Session;
@@ -47,7 +48,8 @@ class HomeController extends Controller
 
             return view('manager.index',compact('user_img','user_name','total_user'));
         }else{
-            return view('user.index',compact('user_img','user_name','total_user'));
+            $meal_assign = (new MealDate())->where('user_id',Auth::id())->with('user')->get();
+            return view('user.index',compact('user_img','user_name','total_user','meal_assign'));
 
         }
         

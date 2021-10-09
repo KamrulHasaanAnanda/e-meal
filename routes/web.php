@@ -56,6 +56,9 @@ Route::get('/cost', [App\Http\Controllers\CostController::class, 'index'])->name
 //income
 Route::get('/income/add', [App\Http\Controllers\IncomeController::class, 'income'])->name('income.add');
 
+Route::post('/manager/income/', [App\Http\Controllers\IncomeController::class, 'income_store'])->name('income.income_store');
+
+
 
 
 

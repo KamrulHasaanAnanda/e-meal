@@ -16,17 +16,17 @@
 {{-- @php
     dd($send_to);
 @endphp --}}
-  <form class="add-form" action="{{route('message.store_message')}}" method="POST" enctype="multipart/form-data">
+  <form class="add-form" action="{{route('income.income_store')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group forms">
       <label for="Enter your name" style="font-size:large;
-      font-weight: bold">Message</label>
-      <textarea cols="30" rows="8" name="message" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter message"></textarea>
-      <input type="hidden"  value={{$send_to[0]->id}} name="send_to">
-      {{-- <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name"> --}}
+      font-weight: bold">Select date</label>
+      <input type="date" class="form-control" value="<?php echo date('yy-mm-dd');?>" name="date" id="">
     </div>
     <div class="form-group forms">
-      <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+        <label for="Enter your name" style="font-size:large;
+        font-weight: bold">Amount</label>
+      <input type="number" name="amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter amount">
     </div>
   
     <button type="submit" class="btn btn-big">Submit</button>

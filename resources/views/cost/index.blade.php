@@ -8,7 +8,7 @@
        
         <div><h3 style="font-weight: bold" class="ml-2 mt-3">Total money<span class="start">
             
-       122 </span>  and Total Spend:<span class="start"> 100 </span>money Left: <span class="start"> 100 </span> </h3>
+       {{$total_income}} </span>  and Total Spend:<span class="start"> 100 </span>money Left: <span class="start"> 100 </span> </h3>
     
        </div>
     </div>

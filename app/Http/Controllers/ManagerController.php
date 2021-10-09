@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cost;
+use App\Models\income;
 use App\Models\MealAdd;
 use App\Models\MealDate;
 use App\Models\MealModel;
@@ -19,8 +20,6 @@ class ManagerController extends Controller
     public function meal_system()
     {
         $meal_schedule = MealModel::get();
-
-
         $users = (new User())->whereHas('userList', function($q){
             return $q->where('type','user');
         })->latest()->get();

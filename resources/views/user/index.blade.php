@@ -10,18 +10,15 @@
                 <div class="card-body">
                     <div class="manager row">
 
-                        {{-- <div class="col-md-6">
+                        <div class="col-md-6">
                            <div class="colums">
                               <h3 class="c-point">
                                 <div class="dropdown">
-                                    <a href={{route('manager.mealSystem')}}>
-                                        System
-                                    </a>
-                                 
+                                    {{$meal_assign[0]->user->name}} you have been assigned on {{$meal_assign[0]->date}} to buy
                                   </div>
                               </h3> 
                            </div>
-                        </div> --}}
+                        </div>
                         <div class="col-md-6">
                             <div class="colums">
                                 
