@@ -20,16 +20,25 @@
       <label for="Enter your name" style="font-size:large;
       font-weight: bold">Name</label>
       <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+      @error('name')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
     </div>
     <div class="form-group forms">
       <label for="exampleInputEmail1" style="font-size:large;
       font-weight: bold">Email address</label>
       <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      @error('email')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
     </div>
     <div class="form-group forms">
       <label for="exampleInputEmail1" style="font-size:large;
       font-weight: bold">Phone number</label>
       <input type="text" name="mobile" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone">
+      @error('mobile')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
     </div>
     <button type="submit" class="btn btn-big">Submit</button>
   </form>

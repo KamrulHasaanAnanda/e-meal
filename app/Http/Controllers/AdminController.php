@@ -32,6 +32,18 @@ class AdminController extends Controller
     public function store_user(Request $req){
         $input = $req->all();
 
+        $validatedData = $request->validate([
+            'name' => ['required','min:3','max:255'],
+            'password' => ['required','min:8'],
+            'email'=> ['required','unique:users'],
+            'mobile'=> ['required','min:11'],
+        ]);
+        if ($validatedData->fails())
+        {
+            return redirect()->route('admin.addUser')->withErrors($validatedData)->withInput();
+        }
+
+        else{
         $user = new User();
         $password = bin2hex(openssl_random_pseudo_bytes(4));
         $mail_password = $password;
@@ -46,13 +58,14 @@ class AdminController extends Controller
         $data = [
             "name" => $input["name"],
             "password" => $mail_password,
-            "email"   => $input["email"]
+            "email"   => $input["email"],
         ];
 
         Mail::to(request()->email)->send(new SendInvitationPasswordMail($data));
 
         return Redirect()->back()->with('success','User Added');
     }
+}
 
     public function edit(Request $request,$id){
         $users  = (new User())->where('id',$id)->with('userList')->get();
@@ -63,6 +76,18 @@ class AdminController extends Controller
     public function update(Request $req,$id){
         $input = $req->all();
         // dd($input);
+        $validatedData = $request->validate([
+            'name' => ['required','min:3','max:255'],
+            'email'=> ['required'],
+            'mobile'=> ['required','min:11'],
+            'user_img'=> ['required'],
+        ]);
+        if ($validatedData->fails())
+        {
+            return redirect()->route('admin.edit')->withErrors($validatedData)->withInput();
+        }
+
+        else{
         if($input['user_img']){
             $input['user_img'] = $this->uploadImg(request()->file('user_img'), 'accounts/user_img');
             Session::put('user_img',$input['user_img']);
@@ -75,6 +100,7 @@ class AdminController extends Controller
             return back();
         }
     }
+}
     public function deleteUser($id){
         // User::find($id)->delete();
         // dd($id);
