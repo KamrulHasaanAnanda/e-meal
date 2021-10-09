@@ -32,7 +32,7 @@ class AdminController extends Controller
     public function store_user(Request $req){
         $input = $req->all();
 
-        $validatedData = $request->validate([
+        $validatedData = $req->validate([
             'name' => ['required','min:3','max:255'],
             'password' => ['required','min:8'],
             'email'=> ['required','unique:users'],
@@ -76,7 +76,7 @@ class AdminController extends Controller
     public function update(Request $req,$id){
         $input = $req->all();
         // dd($input);
-        $validatedData = $request->validate([
+        $validatedData = $req->validate([
             'name' => ['required','min:3','max:255'],
             'email'=> ['required'],
             'mobile'=> ['required','min:11'],
