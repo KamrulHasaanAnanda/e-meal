@@ -84,6 +84,14 @@ class ManagerController extends Controller
         # code...
     }
 
+    public function meal_update(Request $req,$id){
+        $input['meal_id'] = null;
+        $input['user_id'] =null;
+        $meal = (new MealDate())->saveData($input,$id);
+
+        return back()->with('success','Meal has been updated');
+    }
+
     private function getDatesFromRange($start, $end, $format = 'Y-m-d') {
              
         $array = array();
@@ -101,4 +109,5 @@ class ManagerController extends Controller
         return $array;
 
     }
+    
 }

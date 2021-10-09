@@ -60,8 +60,7 @@
                               <span class="meal-table-h3">{{$date->meal->name}}</span>
                             </td>
                             <td>
-                              <a  class="btn btn-secondary">Assign to another User</a>
-
+                              <a href={{route('manager.meal_update',[$date->id])}}  class="btn btn-secondary">Assign to another User</a>
                             </td>
                                                                         
                         @else
