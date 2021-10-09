@@ -20,11 +20,17 @@
         <label for="Enter your name" style="font-size:large;
         font-weight: bold">Name</label>
         <input type="text" name="name" value={{$users[0]->name}} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+        @error('name')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
       </div>
       <div class="form-group forms">
         <label for="exampleInputEmail1" style="font-size:large;
         font-weight: bold">Email address</label>
         <input type="email" name="email" value={{$users[0]->email}} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        @error('email')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
       </div>
       <div class="form-group forms">
         <label for="exampleInputEmail1" style="font-size:large;
@@ -33,6 +39,9 @@
       </div>
       <div class="form-group forms">
         <input type="file" name="user_img" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+        @error('user_img')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
       </div>
 
       <button type="submit" class="btn btn-big">Submit</button>
