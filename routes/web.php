@@ -47,9 +47,11 @@ Route::get('/manager/meal/delete/{id}', [App\Http\Controllers\MealsController::c
 
 //message
 Route::get('/message/send/{id}', [App\Http\Controllers\MessageController::class, 'message_view'])->name('message.message_view');
-Route::post('/manager/meal/store/', [App\Http\Controllers\MessageController::class, 'store_message'])->name('message.store_message');
+Route::get('messages', [App\Http\Controllers\MessageController::class, 'index'])->name('message.view');
+Route::get('all-messages', [App\Http\Controllers\MessageController::class, 'messages'])->name('messages');
+Route::get('single-message/{id}', [App\Http\Controllers\MessageController::class, 'single_message'])->name('message.single');
 
-
+Route::post('/manager/message/store/', [App\Http\Controllers\MessageController::class, 'store_message'])->name('message.store_message');
 //cost
 Route::get('/cost', [App\Http\Controllers\CostController::class, 'index'])->name('cost.index');
 

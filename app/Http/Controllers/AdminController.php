@@ -32,18 +32,18 @@ class AdminController extends Controller
     public function store_user(Request $req){
         $input = $req->all();
 
-        $validatedData = $req->validate([
-            'name' => ['required','min:3','max:255'],
-            'password' => ['required','min:8'],
-            'email'=> ['required','unique:users'],
-            'mobile'=> ['required','min:11'],
-        ]);
-        if ($validatedData->fails())
-        {
-            return redirect()->route('admin.addUser')->withErrors($validatedData)->withInput();
-        }
+        // $validatedData = $req->validate([
+        //     'name' => ['required','min:3','max:255'],
+        //     'password' => ['required','min:8'],
+        //     'email'=> ['required','unique:users'],
+        //     'mobile'=> ['required','min:11'],
+        // ]);
+        // if ($validatedData->fails())
+        // {
+        //     return redirect()->route('admin.addUser')->withErrors($validatedData)->withInput();
+        // }
 
-        else{
+        // else{
         $user = new User();
         $password = bin2hex(openssl_random_pseudo_bytes(4));
         $mail_password = $password;
@@ -64,7 +64,7 @@ class AdminController extends Controller
         Mail::to(request()->email)->send(new SendInvitationPasswordMail($data));
 
         return Redirect()->back()->with('success','User Added');
-    }
+    
 }
 
     public function edit(Request $request,$id){

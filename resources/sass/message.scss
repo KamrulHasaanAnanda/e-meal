@@ -1,0 +1,55 @@
+.all-message {
+    padding: 1rem;
+    border: 3px solid rebeccapurple;
+    height: 27rem;
+    margin: 1rem;
+    border-radius: 10px;
+    overflow-y: scroll;
+    background: black;
+    .message-h3 {
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        /* border-radius: 10px; */
+        border-bottom: 2px solid aliceblue;
+    }
+    .messages {
+        display: grid;
+    }
+    .single-message {
+        font-size: 1rem;
+        font-weight: bold;
+        color: cornflowerblue;
+        padding: 2px;
+        border: 1px solid red;
+        border-radius: 10px;
+        width: 30rem;
+        padding: 10px;
+        background: black;
+        text-decoration: none;
+        &:hover {
+            background: white;
+        }
+    }
+}
+.single-message-blade {
+    margin: 2rem;
+    padding: 1rem;
+    background: currentColor;
+    border-radius: 10px;
+    .span-message {
+        color: snow;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    .span-m {
+        margin-left: 1rem;
+        color: #ff9e25;
+        font-weight: bold;
+    }
+    img {
+        height: 10rem;
+        width: 14rem;
+        border-radius: 14px;
+    }
+}

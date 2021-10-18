@@ -73,12 +73,12 @@
                                         $user->name
                                     }}</option>
                                 @endforeach
-                                </select>
-                            </td>     
+                            </select>
+                        </td>     
                         <td>
                             
-                                <select class="meal-select" name="meal_id">
-                                 <option selected>Please Select a meal</option>
+                                <select class="meal-select" name="meal_id[]" multiple="">
+                                 <option selected disabled>Please Select a meal</option>
                                     @foreach ($meals as $meal)
                                     <option value={{$meal->id}}>{{
                                         $meal->name

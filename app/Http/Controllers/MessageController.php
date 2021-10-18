@@ -13,7 +13,21 @@ class MessageController extends Controller
     use CommonTrait;
     //
     public function index(){
-        return view();
+        
+        return view('message.allMessage');
+    }
+    public function messages(){
+        $messages = Message::where('send_to',Auth::id())->with(['send_from','send_to'])->get();
+        // dd($messages);
+        return response()->json($messages);
+
+    }
+
+    public function single_message($id){
+        // dd($id);
+        $single_message = Message::where('id',$id)->get();
+        // dd($single_message);
+        return view('message.singleMessage',compact('single_message'));
     }
 
     public function message_view($id)

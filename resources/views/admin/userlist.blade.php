@@ -52,7 +52,7 @@
                 <a href={{route('admin.user_edit',[$user->id])}} class="btn btn-secondary">Edit</a>
                 <a href={{route('admin.user_delete',[$user->id])}} onClick="return confirm('Are you want to delete?')" class="btn btn-danger">Delete</a>
                 @endif
-                <a href={{route('message.message_view',[$user->id])}} class="btn btn-se condary">Contact</a>
+                <a href={{route('message.message_view',[$user->id])}} class="btn btn-secondary">Contact</a>
               </td>
             </tr>
             @endforeach

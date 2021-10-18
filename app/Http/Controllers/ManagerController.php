@@ -39,7 +39,19 @@ class ManagerController extends Controller
                 $add_cost = (new Cost())->saveData($input);
             }
             $show_dates = MealDate::with(['user','meal'])->where('meal_model_id', $meal_schedule[0]->id)->get();
-            // dd($show_dates);
+            
+            // foreach($show_dates as $s_date){
+            //     if($s_date->meal_id !=null){
+            //         $meal_id = $s_date->meal_id;
+            //         // $meals = implode(",",$meal_id);
+            //         // dd( $meal_id);
+            //         foreach($meal_id as $id){
+
+            //             $meals = MealAdd::where('id',$id)->get();
+            //         }
+            //     }
+            // }
+            // dd($meals);
             return view('manager.mealSystem',compact('meal_schedule','show_dates','users','meals'));
 
         }else{
@@ -78,6 +90,7 @@ class ManagerController extends Controller
     public function meal_assign(Request $req,$id)
     {
         $input = $req->all();
+        // dd($input);
         $meal_add = (new MealDate())->saveData($input,$id);
         $add_cost = (new Cost())->saveData($input,$id);
         return back()->with("success","User has been Assigned");

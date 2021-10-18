@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
   <div class="add-user">
-    <h3 class="add-user-h3 text-center">Send Message to </h3>
+    <h3 class="add-user-h3 text-center">Add income</h3>
     @if (session('success'))
                         
     <div class="alert alert-warning alert-success fade show" role="alert">
@@ -22,6 +22,18 @@
       <label for="Enter your name" style="font-size:large;
       font-weight: bold">Select date</label>
       <input type="date" class="form-control" value="<?php echo date('yy-mm-dd');?>" name="date" id="">
+    </div>
+ 
+   <div class="form-group forms">
+          <select class="user-select" name="user_id">
+          <option selected>Please Select a user</option>
+              @foreach ($users as $user)
+              <option value={{$user->id}}>{{
+                  $user->name
+              }}</option>
+          @endforeach
+      </select>
+    
     </div>
     <div class="form-group forms">
         <label for="Enter your name" style="font-size:large;

@@ -46,7 +46,7 @@
                             <div class="colums">
                                 
                                 <h3 class="c-point">
-                                    <a href={{route('admin.userList')}}>
+                                    <a href={{route('message.view')}}>
                                        Inbox
                                     </a>
                                     </h3>

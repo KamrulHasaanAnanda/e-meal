@@ -16,7 +16,7 @@ class CreateMealDatesTable extends Migration
         Schema::create('meal_dates', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->integer('meal_id')->nullable();
+            $table->bigInteger('meal_id')->nullable();
             $table->integer('user_id')->nullable();
             $table->integer('meal_model_id')->nullable();
             $table->timestamps();

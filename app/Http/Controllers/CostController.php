@@ -11,11 +11,12 @@ class CostController extends Controller
     //
     public function index(){
         $costs = (new Cost())->with('user')->get();
-        $incomes  = (new income())->get();
+        $incomes  = (new income())->latest()->get();
+        $total_income = 0;
         foreach($incomes as $income){
-            $total_income = 0;
             $total_income +=$income->amount;
             // ->count();
+            // return $total_income;
         }
         // $total_income
         // dd($total_income);
