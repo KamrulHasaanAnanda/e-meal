@@ -8,7 +8,7 @@
        
         <div><h3 style="font-weight: bold" class="ml-2 mt-3">Total money<span class="start">
             
-       {{$total_income}} </span>  and Total Spend:<span class="start"> 100 </span>money Left: <span class="start"> 100 </span> </h3>
+       {{$total_income}} </span>  and Total Spend:<span class="start"> {{$total_cost}} </span>money Left: <span class="start"> {{$total_money}} </span> </h3>
     
        </div>
     </div>
@@ -44,17 +44,20 @@
             <tbody>
                 @foreach ($costs as $cost)
                 <tr>
+                  {{-- @php
+                      dd($cost->total_cost);
+                  @endphp --}}
                         <td>{{$cost->date}}</td>
                         @if ($cost->user)
 
                         <td>{{$cost->user->name}}</td>
                             
                         @endif
+                        <td>
+                          <span class="meal-table-h3">{{$cost->total_cost}}</span>
+                        </td>
                 
                             {{-- <td>
-                              <span class="meal-table-h3">{{$date->meal->name}}</span>
-                            </td>
-                            <td>
                               <a href={{route('manager.meal_update',[$date->id])}}  class="btn btn-secondary">Assign to another User</a>
                             </td>                                                    --}}
                     

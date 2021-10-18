@@ -38,8 +38,6 @@
                 <th scope="col ml-2">user</th>
                 <th scope="col ml-2">meal</th>
                 <th scope="col ml-2">Action</th>
-
-
               </tr>
             </thead>
             <tbody>

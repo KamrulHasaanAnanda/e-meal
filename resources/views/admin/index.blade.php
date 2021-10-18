@@ -8,7 +8,7 @@
                 <div class="card-header header-dash">Total User: <span style="color: red">{{$total_user}}</span></div>
 
                 <div class="card-body">
-                    <div class="admin row">
+                    <div class="manager row">
 
                         <div class="col-md-6">
                            <div class="colums">
@@ -18,6 +18,16 @@
                                 </a>   
                               </h3> 
                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="colums">
+                                
+                                <h3 class="c-point">
+                                    <a href={{route('message.view')}}>
+                                       Inbox
+                                    </a>
+                                    </h3>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <div class="colums">

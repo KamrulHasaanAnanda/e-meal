@@ -14,15 +14,22 @@ class CostController extends Controller
     public function index(){
         $costs = (new Cost())->with('user')->get();
         $incomes  = (new income())->latest()->get();
+        // $costs = Cost::latest()->get();
         $total_income = 0;
+        $total_cost = 0;
         foreach($incomes as $income){
             $total_income +=$income->amount;
             // ->count();
             // return $total_income;
         }
+        foreach($costs as $cost){
+            $total_cost+= $cost->total_cost;
+        }
+        $total_money = $total_income-$total_cost;
+        // dd($total_cost);
         // $total_income
         // dd($total_income);
-        return view('cost.index',compact('costs','total_income'));
+        return view('cost.index',compact('costs','total_income','total_cost','total_money'));
     }
     public function user_cost()
     {
