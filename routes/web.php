@@ -54,6 +54,10 @@ Route::get('single-message/{id}', [App\Http\Controllers\MessageController::class
 Route::post('/manager/message/store/', [App\Http\Controllers\MessageController::class, 'store_message'])->name('message.store_message');
 //cost
 Route::get('/cost', [App\Http\Controllers\CostController::class, 'index'])->name('cost.index');
+Route::get('/cost/user', [App\Http\Controllers\CostController::class, 'user_cost'])->name('cost.user');
+Route::post('/cost/update/{id}', [App\Http\Controllers\CostController::class, 'update_cost'])->name('cost.update_cost');
+
+
 
 //income
 Route::get('/income/add', [App\Http\Controllers\IncomeController::class, 'income'])->name('income.add');

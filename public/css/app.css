@@ -10201,6 +10201,13 @@ body {
   color: #515151;
 }
 
+body {
+  scroll-behavior: smooth;
+}
+body img {
+  filter: drop-shadow(2px 4px 8px #585858);
+}
+
 .c-point {
   cursor: pointer;
 }
@@ -10365,6 +10372,43 @@ body {
   font-weight: bold;
   color: red;
   text-align: center;
+}
+
+.meal-system-user {
+  border: 3px solid rebeccapurple;
+  height: 27rem;
+  padding: 1rem;
+  background: #d7bebe;
+  border-radius: 1rem;
+}
+.meal-system-user .meal-head {
+  border-bottom: 2px solid brown;
+}
+.meal-system-user .meal-head label {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: brown;
+}
+.meal-system-user .meal-head h3 {
+  font-size: 1.3rem;
+  color: black;
+  font-weight: bold;
+}
+.meal-system-user .cost h2 {
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  color: black;
+}
+.meal-system-user .cost .total-cost h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: brown;
+}
+.meal-system-user .cost .total-cost input {
+  height: 3rem;
+  border: none;
+  border-radius: 10px;
 }
 
 .all-message {

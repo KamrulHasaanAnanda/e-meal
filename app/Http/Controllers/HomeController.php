@@ -48,7 +48,7 @@ class HomeController extends Controller
 
             return view('manager.index',compact('user_img','user_name','total_user'));
         }else{
-            $meal_assign = (new MealDate())->where('user_id',Auth::id())->with('user')->get();
+            $meal_assign = (new MealDate())->where('user_id',Auth::id())->with(['user','meal'])->get();
             return view('user.index',compact('user_img','user_name','total_user','meal_assign'));
 
         }

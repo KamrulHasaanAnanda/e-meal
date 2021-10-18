@@ -17,7 +17,7 @@ class MessageController extends Controller
         return view('message.allMessage');
     }
     public function messages(){
-        $messages = Message::where('send_to',Auth::id())->with(['send_from','send_to'])->get();
+        $messages = Message::where('send_to',Auth::id())->with(['send_from','send_to'])->latest()->get();
         // dd($messages);
         return response()->json($messages);
 

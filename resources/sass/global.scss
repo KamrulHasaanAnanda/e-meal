@@ -1,3 +1,9 @@
+body {
+    scroll-behavior: smooth;
+    img {
+        filter: drop-shadow(2px 4px 8px #585858);
+    }
+}
 .c-point {
     cursor: pointer;
 }

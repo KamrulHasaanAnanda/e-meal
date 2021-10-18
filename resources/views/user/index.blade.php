@@ -13,8 +13,22 @@
                         <div class="col-md-6">
                            <div class="colums">
                               <h3 class="c-point">
-                                <div class="dropdown">
-                                    {{$meal_assign[0]->user->name}} you have been assigned on {{$meal_assign[0]->date}} to buy
+                                <div class="meal-assign" style="
+                                font-size: 1rem;
+                                color: coral;
+                                font-weight: bold;
+                                font-family: 'FontAwesome';
+                            ">
+                                    {{-- @php
+                                        dd($meal_assign[0]);
+                                    @endphp --}}
+                                    @if (!empty($meal_assign[0]))
+                                    
+                                    <span style="color: red">{{$meal_assign[0]->user->name}}</span> you have been assigned on  <span style="color: red">{{$meal_assign[0]->date}}</span> to buy
+                                    <span style="color: red">{{$meal_assign[0]->meal->name}}</span>
+                                    @else
+                                        No meal assigned
+                                    @endif
                                   </div>
                               </h3> 
                            </div>
@@ -23,8 +37,8 @@
                             <div class="colums">
                                 
                                 <h3 class="c-point">
-                                    <a href={{route('admin.userList')}}>
-                                       Costing
+                                    <a href={{route('cost.user')}}>
+                                       Cost
                                     </a>
                                     </h3>
                             </div>
@@ -43,10 +57,10 @@
                             <div class="colums">
                                 
                                 <h3 class="c-point">
-                                    <a href={{route('admin.userList')}}>
+                                    <a href={{route('message.view')}}>
                                        Inbox
                                     </a>
-                                    </h3>
+                                </h3>
                             </div>
                         </div>
 
